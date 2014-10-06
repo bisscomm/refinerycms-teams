@@ -1,0 +1,32 @@
+fr:
+  refinery:
+    plugins:
+      teams:
+        title: Teams
+    teams:
+      admin:
+        teams:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Team
+            reorder: Réordonner les Teams
+            reorder_done: Fin de réordonnancement des Teams
+          records:
+            title: Teams
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Team. Cliquer sur "Créer un(e) nouve(au/l/lle) Team" pour créer votre premi(er/ère) team.'
+          team:
+            view_live_html: Voir ce(t/tte) team <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) team
+            delete: Supprimer définitivement ce(t/tte) team
+      teams:
+        show:
+          other: Autres Teams
+  activerecord:
+    attributes:
+      'refinery/teams/team':
+        fullname: Fullname
+        title: Title
+        body: Body
+        photo: Photo
+        email: Email
+        draft: Draft

@@ -1,0 +1,54 @@
+<%= form_for [refinery, :teams_admin, @team] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @team,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :fullname -%>
+    <%= f.text_field :fullname, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:body],
+                :object => "teams/team" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @team.photo,
+               :toggle_image_display => false -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :draft -%>
+    <%= f.number_field :draft -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.teams.admin.teams.team'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @team.fullname) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>
