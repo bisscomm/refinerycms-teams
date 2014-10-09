@@ -1,14 +1,14 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(team) -%>">
   <span class='title'>
     <%= team.fullname %>
-
+    <% if team.draft? %><span class="label notice"><%= t('.draft')%></span><% end %>
   </span>
   <span class='actions'>
-    
+
     <%= link_to refinery_icon_tag("application_go.png"), refinery.teams_team_path(team),
         :title => t('.view_live_html'),
         :target => "_blank" %>
-    
+
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_teams_admin_team_path(team),
          :title => t('.edit') %>
     <%= link_to refinery_icon_tag("delete.png"), refinery.teams_admin_team_path(team),
