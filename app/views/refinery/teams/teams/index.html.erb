@@ -1,11 +1,17 @@
 <% content_for :body do %>
-  <ul id="teams">
-    <% @teams.each do |team| %>
-      <li>
-        <%= link_to team.fullname, refinery.teams_team_path(team) %>
-      </li>
-    <% end %>
-  </ul>
+  <% if @teams.any? %>
+    <section>
+      <ul id="teams">
+        <% @teams.each do |team| %>
+          <li>
+            <%= link_to team.fullname, refinery.teams_team_path(team) %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% else %>
+    <%= t('.no_items_yet') %>
+  <% end %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
