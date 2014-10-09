@@ -1,10 +1,11 @@
 require 'refinerycms-core'
 
 module Refinery
-  autoload :TeamsGenerator, 'generators/refinery/teams_generator'
+  autoload :TeamsGenerator, 'generators/refinery/teams/teams_generator'
 
   module Teams
     require 'refinery/teams/engine'
+    require 'refinery/teams/configuration'
 
     class << self
       attr_writer :root

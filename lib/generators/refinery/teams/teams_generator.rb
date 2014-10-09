@@ -1,6 +1,12 @@
 module Refinery
   class TeamsGenerator < Rails::Generators::Base
 
+    source_root File.expand_path("../templates", __FILE__)
+
+    def generate_teams_initializer
+      template "config/initializers/refinery/teams.rb.erb", File.join(destination_root, "config", "initializers", "refinery", "teams.rb")
+    end
+
     def rake_db
       rake "refinery_teams:install:migrations"
     end

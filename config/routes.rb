@@ -1,7 +1,8 @@
 Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
-  namespace :teams do
+  namespace :teams, :path => Refinery::Teams.page_url do
+    root :to => "teams#index"
     resources :teams, :path => '', :only => [:index, :show]
   end
 
@@ -15,5 +16,4 @@ Refinery::Core::Engine.routes.draw do
       end
     end
   end
-
 end
