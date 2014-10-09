@@ -7,7 +7,7 @@ class CreateTeamsTeams < ActiveRecord::Migration
       t.text :body
       t.integer :photo_id
       t.string :email
-      t.integer :draft
+      t.integer :draft, :default => true
       t.integer :position
 
       t.timestamps
