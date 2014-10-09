@@ -2,31 +2,34 @@ fr:
   refinery:
     plugins:
       teams:
-        title: Teams
+        title: Équipe
     teams:
       admin:
         teams:
           actions:
-            create_new: Créer un(e) nouve(au/l/lle) Team
-            reorder: Réordonner les Teams
-            reorder_done: Fin de réordonnancement des Teams
+            create_new: Créer un(e) nouve(l/lle) équip(ier/ère)
+            reorder: Réordonner les équipiers
+            reorder_done: Fin de réordonnancement des équipiers
           records:
-            title: Teams
+            title: Équipe
             sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Team. Cliquer sur "Créer un(e) nouve(au/l/lle) Team" pour créer votre premi(er/ère) team.'
+            no_items_yet: 'Il n''y a actuellement aucun(e) équipier. Cliquer sur "Créer un(e) nouve(l/lle) équip(ier/ère)" pour créer votre premi(er/ère) équip(ier/ère).'
           team:
-            view_live_html: Voir ce(t/tte) team <br/><em>(Ouvre une nouvelle fenêtre)</em>
-            edit: Modifier ce(t/tte) team
-            delete: Supprimer définitivement ce(t/tte) team
+            view_live_html: Voir ce(t/tte) équip(ier/ère) <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) équip(ier/ère)
+            delete: Supprimer définitivement ce(t/tte) équip(ier/ère)
+            draft: brouillon
       teams:
+        index:
+          no_items_yet: Il n''y a actuellement aucun(e) équipier.
         show:
-          other: Autres Teams
+          other: Autres équip(ier/ère)
   activerecord:
     attributes:
       'refinery/teams/team':
-        fullname: Fullname
-        title: Title
-        body: Body
+        fullname: Nom complet
+        title: Titre
+        body: Corps
         photo: Photo
-        email: Email
-        draft: Draft
+        email: Courriel
+        draft: Enregistrer comme un brouillon
