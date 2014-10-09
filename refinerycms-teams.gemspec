@@ -3,10 +3,12 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-teams'
-  s.version           = '1.0'
+  s.version           = %q{3.0.0.dev}
   s.description       = 'Ruby on Rails Team extension for Refinery CMS'
   s.date              = '2014-10-06'
   s.summary           = 'Team extension for Refinery CMS'
+  s.email             = %q{info@bisscomm.com}
+  s.authors           = ['Brice Sanchez']
   s.require_paths     = %w(lib)
   s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
 
