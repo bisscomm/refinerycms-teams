@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 3.0.0'
   s.add_dependency             'acts_as_indexed',     '~> 0.8.0'
-  s.add_dependency             'route_translator',     '~> 3.2.4'
 
   # Development dependencies (usually used for testing)
   s.add_development_dependency 'refinerycms-testing', '~> 3.0.0'
