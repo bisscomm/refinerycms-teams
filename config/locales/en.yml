@@ -5,42 +5,6 @@ en:
         title: Teams
     teams:
       admin:
-        teams:
-          actions:
-            create_new: Add New Team
-            reorder: Reorder Teams
-            reorder_done: Done Reordering Teams
-          records:
-            title: Teams
-            sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Teams yet. Click "Add New Team" to add your first team.
-          team:
-            view_live_html: View this team live <br/><em>(opens in a new window)</em>
-            edit: Edit this team
-            delete: Remove this team forever
-            draft: draft
-      teams:
-        index:
-          no_items_yet: There are no Teams yet.
-        show:
-          other: Other Teams
-  activerecord:
-    attributes:
-      'refinery/teams/team':
-        fullname: Fullname
-        job_title: Title
-        body: Body
-        photo: Photo
-        email: Email
-        draft: Save as draft
-
-fr:
-  refinery:
-    plugins:
-      teams:
-        title: Teams
-    teams:
-      admin:
         submenu:
           categories:
             title: Categories
@@ -58,6 +22,10 @@ fr:
           category:
             edit: Edit this category
             delete: Delete this category
+          index:
+            title: Categories
+            no_results: Sorry! There are no results found.
+            no_items_yet: There are no categories yet. Click "Add new category" to add your first category.
         teams:
           records:
             title: Teams
