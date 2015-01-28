@@ -2,22 +2,39 @@ fr:
   refinery:
     plugins:
       teams:
-        title: Équipe
+        title: Équipes
     teams:
       admin:
-        teams:
+        submenu:
+          categories:
+            title: Catégories
+            manage: Gérer les catégories
+            new: Créer une nouvelle catégorie
+          teams:
+            title: Équipes
+            manage: Gérer les équipes
+            new: Créer un(e) nouvel(le) équipier(ère)
+            uncategorized: Équipier(ère) non catégorisé(e)s
+        categories:
           actions:
-            create_new: Créer un(e) nouve(l/lle) équip(ier/ère)
-            reorder: Réordonner les équipiers
-            reorder_done: Fin de réordonnancement des équipiers
+            reorder_categories: Réordonner les catégories
+            reorder_categories_done: Fin de réordonnancement des catégories
+          category:
+            edit: Modifier cette catégorie
+            delete: Supprimer définitivement cette catégorie
+          index:
+            title: Catégories
+            no_results: Désolé ! Aucun résultat.
+            no_items_yet: 'Il n''y a actuellement aucun(e) categorie. Cliquer sur "Créer une nouvelle catégorie" pour créer votre première catégorie.'
+        teams:
           records:
-            title: Équipe
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) équipier. Cliquer sur "Créer un(e) nouve(l/lle) équip(ier/ère)" pour créer votre premi(er/ère) équip(ier/ère).'
+            title: Équipes
+            no_results: Désolé ! Aucun résultat.
+            no_items_yet: 'Il n''y a actuellement aucun(e) équipier. Cliquer sur "Créer un(e) nouvel(le) équipier(ère)" pour créer votre premier(ère) équipier(ère).'
           team:
-            view_live_html: Voir ce(t/tte) équip(ier/ère) <br/><em>(Ouvre une nouvelle fenêtre)</em>
-            edit: Modifier ce(t/tte) équip(ier/ère)
-            delete: Supprimer définitivement ce(t/tte) équip(ier/ère)
+            view_live_html: Voir cet(te) équipier(ère) <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier cet(te) équipier(ère)
+            delete: Supprimer définitivement cet(te) équipier(ère)
             draft: brouillon
       teams:
         index:
@@ -25,10 +42,15 @@ fr:
         show:
           other: Autres équip(ier/ère)
   activerecord:
+    models:
+      refinery/teams/category: Categorie
+      refinery/teams/team: Équipe
     attributes:
-      'refinery/teams/team':
-        fullname: Nom complet
+      refinery/teams/category:
         title: Titre
+      refinery/teams/team:
+        fullname: Nom complet
+        job_title: Titre de l'emploi
         body: Corps
         photo: Photo
         email: Courriel

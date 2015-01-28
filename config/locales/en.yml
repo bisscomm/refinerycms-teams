@@ -28,7 +28,61 @@ en:
     attributes:
       'refinery/teams/team':
         fullname: Fullname
+        job_title: Title
+        body: Body
+        photo: Photo
+        email: Email
+        draft: Save as draft
+
+fr:
+  refinery:
+    plugins:
+      teams:
+        title: Teams
+    teams:
+      admin:
+        submenu:
+          categories:
+            title: Categories
+            manage: Manage categories
+            new: Add new category
+          teams:
+            title: Teams
+            manage: Manage teams
+            new: Add new team member
+            uncategorized: Uncategorized team member
+        categories:
+          actions:
+            reorder_categories: Reorder categories
+            reorder_categories_done: Done reordering categories
+          category:
+            edit: Edit this category
+            delete: Delete this category
+        teams:
+          records:
+            title: Teams
+            no_results: Sorry! There are no results found.
+            no_items_yet: There are no Teams yet. Click "Add New Team" to add your first team.
+          team:
+            view_live_html: View this team member live <br/><em>(opens in a new window)</em>
+            edit: Edit this team member
+            delete: Delete this team member
+            draft: draft
+      teams:
+        index:
+          no_items_yet: There are no teams member yet.
+        show:
+          other: Other teams
+  activerecord:
+    models:
+      refinery/teams/category: Category
+      refinery/teams/team: Team
+    attributes:
+      refinery/teams/category:
         title: Title
+      refinery/teams/team:
+        fullname: Fullname
+        job_title: Job title
         body: Body
         photo: Photo
         email: Email
