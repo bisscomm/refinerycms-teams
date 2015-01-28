@@ -1,0 +1,32 @@
+it:
+  refinery:
+    plugins:
+      teams:
+        title: Teams
+    teams:
+      admin:
+        teams:
+          actions:
+            create_new: Aggiungi Nuovo Team
+            reorder: Riordina Teams
+            reorder_done: Termina il Riordino di Teams
+          records:
+            title: Teams
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Teams. Clicca "Aggiungi Nuovo Team" per aggiungere il tuo primo team.
+          team:
+            view_live_html: Guarda live questo team <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo team
+            delete: Rimuovi per sempre questo team
+      teams:
+        show:
+          other: Altri Teams
+  activerecord:
+    attributes:
+      'refinery/teams/team':
+        fullname: Fullname
+        title: Title
+        body: Body
+        photo: Photo
+        email: Email
+        draft: Draft
