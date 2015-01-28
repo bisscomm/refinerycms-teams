@@ -5,33 +5,28 @@
 <% content_for :body do %>
   <section>
     <h1>Fullname</h1>
-    <p>
-      <%=raw @team.fullname %>
-    </p>
-  </section>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @team.title %>
-    </p>
-  </section>
-  <section>
-    <h1>Body</h1>
-    <p>
-      <%=raw @team.body %>
-    </p>
-  </section>
-  <section>
-    <h1>Photo</h1>
-    <p>
-      <%= image_fu @team.photo, nil %>
-    </p>
-  </section>
-  <section>
-    <h1>Email</h1>
-    <p>
-      <%=raw @team.email %>
-    </p>
+    <p><%= raw @team.fullname %></p>
+
+    <h2>Job Title</h2>
+    <p><%= raw @team.job_title %></p>
+
+    <h2>Body</h2>
+    <p><%= raw @team.body %></p>
+
+    <h2>Photo</h2>
+    <p><%= image_fu @team.photo, nil %></p>
+
+    <h2>Email</h2>
+    <p><%= raw @team.email %></p>
+
+    <h2>Categories</h2>
+    <ul>
+      <% @team.categories.each do |c| %>
+        <li>
+          <%= c.title %>
+        </li>
+      <% end %>
+    </ul>
   </section>
 <% end %>
 
