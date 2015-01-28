@@ -1,13 +1,9 @@
 # Refinery CMS Teams
 
-Teams engine for [Refinery CMS](http://refinerycms.com) allows you to add team member on your website
+Teams engine for [Refinery CMS](http://refinerycms.com) allows you to add teams on your website
 
 ### In summary you can:
-* Manage a team
-
-### In the future you can:
-* Manage multiple teams
-
+* Manage multiple teams with categories
 
 ## Requirements
 
@@ -21,7 +17,7 @@ This version of `refinerycms-teams` supports Refinery 3.x and Rails 4.1.x.
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-teams', git: 'https://github.com/bisscomm/refinerycms-teams', branch: 'master'
+gem 'refinerycms-teams', github: 'bisscomm/refinerycms-teams', branch: 'master'
 ```
 
 Now, run ``bundle install``
