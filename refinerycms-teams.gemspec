@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-teams'
-  s.version           = %q{3.0.0.dev}
+  s.version           = %q{3.0.0}
   s.description       = 'Ruby on Rails Team extension for Refinery CMS'
   s.date              = '2014-10-06'
   s.summary           = 'Team extension for Refinery CMS'
