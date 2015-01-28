@@ -1,0 +1,34 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(category) -%>">
+  <div class='clearfix'>
+    <span class='title'>
+      <%= title_with_translations category %>
+    </span>
+    <% if Refinery::I18n.frontend_locales.many? %>
+      <span class='locales'>
+        <% category.translations.sort_by{ |t| Refinery::I18n.frontend_locales.index(t.locale)}.each do |translation| %>
+          <% if translation.title.present? %>
+            <%= link_to refinery.edit_teams_admin_category_path(category, :switch_locale => translation.locale),
+                        :class => 'locale', :title => translation.locale.upcase do %>
+
+              <div class="locale_icon <%= translation.locale %>">
+                <%= refinery_icon_tag('locale-blue.svg', :size => '24x24', :alt => translation.locale.upcase) %>
+                <span class="code"><%= locale_country(translation.locale) %></span>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </span>
+    <% end %>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag('application_edit.png'),
+                  refinery.edit_teams_admin_category_path(category, :switch_locale => (category.translations.first.locale unless category.translated_to_default_locale?)),
+                  :title => t('edit', :scope => 'refinery.admin.categories') %>
+      <%= link_to refinery_icon_tag("delete.png"), refinery.teams_admin_category_path(category),
+          :class => "cancel confirm-delete",
+          :title => t('.delete'),
+          :data => {:confirm => t('message', :scope => 'refinery.admin.delete', :title => category.title)},
+          :method => :delete %>
+    </span>
+  </div>
+</li>

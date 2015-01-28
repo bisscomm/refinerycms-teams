@@ -1,0 +1,22 @@
+<%= form_for [refinery, :teams_admin, @category],
+             :url => (refinery.teams_admin_category_path(@category) if @category.persisted?) do |f| %>
+
+  <%= render '/refinery/admin/error_messages',
+              :object => @category,
+              :include_object_name => true %>
+
+  <%= render '/refinery/admin/locale_picker',
+              :current_locale => Globalize.locale %>
+
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => true,
+             :delete_title => t('delete', :scope => 'refinery.categories.admin.categories.category'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @category.title),
+             :cancel_url => refinery.teams_admin_categories_path %>
+<% end -%>

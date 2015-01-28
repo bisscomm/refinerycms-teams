@@ -1,0 +1,39 @@
+<ul class='search_list'>
+  <li class='not_a_link'>
+    <%= render "/refinery/admin/search", :url => request.path %>
+  </li>
+</ul>
+
+<ul class='collapsible_menu'>
+  <li class='not_a_link'>
+    <%= link_to t('.teams.title'), '#',
+                 :class => 'page_copy_icon' %>
+  </li>
+  <li>
+    <%= link_to t('.teams.manage'), refinery.teams_admin_teams_path,
+                 :class => 'page_icon' %>
+  </li>
+  <li>
+    <%= link_to t('.teams.uncategorized'), refinery.uncategorized_teams_admin_teams_path,
+                :class => 'page_icon' %>
+  </li>
+  <li>
+     <%= link_to t('.teams.new'), refinery.new_teams_admin_team_path,
+                 :class => 'page_add_icon' %>
+  </li>
+</ul>
+
+<ul class='collapsible_menu'>
+  <li class='not_a_link'>
+    <%= link_to t('.categories.title'), '#',
+                :class => 'folder_icon' %>
+  </li>
+  <li>
+    <%= link_to t('.categories.manage'), refinery.teams_admin_categories_path,
+                :class => 'folder_edit_icon' %>
+  </li>
+  <li>
+    <%= link_to t('.categories.new'), refinery.new_teams_admin_category_path,
+                :class => 'folder_add_icon' %>
+  </li>
+</ul>

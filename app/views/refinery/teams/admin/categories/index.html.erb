@@ -1,0 +1,21 @@
+<section id='records'>
+  <% if @categories.any? %>
+    <%= render "sortable_list" %>
+  <% else %>
+    <% if searching? %>
+      <%= t('no_results', :scope => 'refinery.admin.search') %>
+    <% else %>
+      <p>
+        <strong>
+          <%= t('.no_items_yet', :create => t('new', :scope => 'refinery.teams.admin.submenu.categories')) %>
+        </strong>
+      </p>
+    <% end %>
+  <% end %>
+</section>
+
+<section id='actions'>
+  <%= render 'actions' %>
+</section>
+
+<%= render '/refinery/admin/make_sortable', options: {tree: true, replaceContentsAfterUpdate: true} if @categories.many? -%>

@@ -9,8 +9,24 @@
   </div>
 
   <div class='field'>
-    <%= f.label :title -%>
-    <%= f.text_field :title, :class => 'larger' -%>
+    <%= f.label :job_title -%>
+    <%= f.text_field :job_title, :class => 'larger' -%>
+  </div>
+
+  <div class='field'>
+    <h3><%= t('title', :scope => 'refinery.teams.admin.submenu.categories') %></h3>
+    <ul class='teams_categories'>
+      <% @categories.sort_by { |c| c.position }.each do |category| %>
+        <li>
+          <%= check_box_tag 'team[category_ids][]', category.id,
+                             @team.categories.include?(category),
+                             :id => (id="team_category_ids_#{category.id}") %>
+          <%= label_tag 'team[category_ids][]', category.title,
+                         :class => 'stripped',
+                         :for => id %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class='field'>

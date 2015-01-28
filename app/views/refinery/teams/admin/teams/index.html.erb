@@ -1,7 +1,6 @@
 <section id='records'>
   <%= render 'records' %>
 </section>
-<aside id='actions'>
+<section id='actions'>
   <%= render 'actions' %>
-</aside>
-<%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Teams::Admin::TeamsController.sortable? and ::Refinery::Teams::Team.many? %>
+</section>

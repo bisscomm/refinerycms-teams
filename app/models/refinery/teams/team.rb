@@ -3,13 +3,27 @@ module Refinery
     class Team < Refinery::Core::BaseModel
       self.table_name = 'refinery_teams'
 
+      translates :body
+
       validates :fullname, :presence => true, :uniqueness => true
+      alias_attribute :title, :fullname
 
       belongs_to :photo, :class_name => '::Refinery::Image'
 
-      acts_as_indexed :fields => [:fullname, :title]
+      has_many :categorizations, :dependent => :destroy, :foreign_key => :team_id
+      has_many :categories, :through => :categorizations, :source => :teams_category
+
+      acts_as_indexed :fields => [:fullname]
 
       scope :published, -> { where :draft => false }
+
+      class << self
+        def uncategorized
+          published.includes(:categories).where(
+            Refinery::Teams::Categorization.table_name => { :teams_category_id => nil }
+          )
+        end
+      end
     end
   end
 end
