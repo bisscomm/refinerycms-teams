@@ -3,6 +3,9 @@
               :object => @team,
               :include_object_name => true %>
 
+  <%= render '/refinery/admin/locale_picker',
+              :current_locale => Globalize.locale %>
+
   <div class='field'>
     <%= f.label :fullname -%>
     <%= f.text_field :fullname, :class => 'larger widest' -%>
