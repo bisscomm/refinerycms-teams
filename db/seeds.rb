@@ -7,7 +7,7 @@ Refinery::I18n.frontend_locales.each do |lang|
     )
   end if defined?(Refinery::User)
 
-  Refinery::Page.where(link_url: (url = "/teams")).first_or_create!(
+  Refinery::Page.where(link_url: (url = Refinery::Teams.page_url)).first_or_create!(
     title: 'Teams',
     deletable: false,
     menu_match: "^#{url}(\/|\/.+?|)$"
