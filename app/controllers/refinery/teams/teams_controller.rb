@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_teams
-        @teams = Team.published.order('position ASC')
+        @teams = Team.published
       end
 
       def find_page
