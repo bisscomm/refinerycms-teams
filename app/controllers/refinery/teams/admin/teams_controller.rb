@@ -4,7 +4,7 @@ module Refinery
       class TeamsController < ::Refinery::AdminController
 
         crudify :'refinery/teams/team',
-                :order => 'fullname ASC',
+                :order => 'position ASC',
                 :include => [:translations]
 
         helper :'refinery/teams/admin'

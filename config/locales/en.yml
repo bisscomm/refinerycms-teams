@@ -27,6 +27,9 @@ en:
             no_results: Sorry! There are no results found.
             no_items_yet: There are no categories yet. Click "Add new category" to add your first category.
         teams:
+          actions:
+            reorder: Reorder teams
+            reorder_done: Reorder teams done
           records:
             title: Teams
             no_results: Sorry! There are no results found.

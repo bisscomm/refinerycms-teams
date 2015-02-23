@@ -1,1 +1,18 @@
 <%= render '/refinery/teams/admin/submenu' %>
+
+<% if !searching? && ::Refinery::Teams::Admin::TeamsController.sortable? && ::Refinery::Teams::Team.many? %>
+  <ul>
+    <li>
+      <%= link_to t('.reorder', :what => "Teams"),
+                   refinery.teams_admin_teams_path,
+                   :id => "reorder_action",
+                   :class => "reorder_icon" %>
+
+      <%= link_to t('.reorder_done', :what => "Teams"),
+                   refinery.teams_admin_teams_path,
+                   :id => "reorder_action_done",
+                   :style => "display: none;",
+                   :class => "reorder_icon" %>
+    </li>
+  </ul>
+<% end %>

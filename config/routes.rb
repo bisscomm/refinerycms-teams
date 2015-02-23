@@ -15,6 +15,7 @@ Refinery::Core::Engine.routes.draw do
         resources :teams, :except => :show do
           collection do
             get :uncategorized
+            post :update_positions
           end
         end
 

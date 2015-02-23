@@ -27,6 +27,9 @@ fr:
             no_results: Désolé ! Aucun résultat.
             no_items_yet: 'Il n''y a actuellement aucun(e) categorie. Cliquer sur "Créer une nouvelle catégorie" pour créer votre première catégorie.'
         teams:
+          actions:
+            reorder: Réordonner les équipier(ère)s
+            reorder_done: Fin de réordonnancement des équipier(ère)s
           records:
             title: Équipes
             no_results: Désolé ! Aucun résultat.

@@ -17,6 +17,8 @@ module Refinery
 
       scope :published, -> { where :draft => false }
 
+      default_scope { order(position: :asc) }
+
       class << self
         def uncategorized
           published.includes(:categories).where(
