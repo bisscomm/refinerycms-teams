@@ -17,7 +17,7 @@
     <p><%= image_fu @team.photo, nil %></p>
 
     <h2>Email</h2>
-    <p><%= raw @team.email %></p>
+    <p><%= mail_to @team.email, t('.email'), encode: 'hex' %></p>
 
     <h2>Categories</h2>
     <ul>
