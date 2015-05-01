@@ -3,7 +3,7 @@ module Refinery
     class Team < Refinery::Core::BaseModel
       self.table_name = 'refinery_teams'
 
-      translates :body
+      translates :job_title, :body
 
       validates :fullname, :presence => true, :uniqueness => true
       alias_attribute :title, :fullname
