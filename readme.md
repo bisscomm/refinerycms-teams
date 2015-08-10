@@ -1,5 +1,7 @@
 # Refinery CMS Teams
 
+[![Build Status](https://travis-ci.org/bisscomm/refinerycms-teams.svg?branch=master)](https://travis-ci.org/refinery/refinerycms) [![Code Climate](https://codeclimate.com/github/bisscomm/refinerycms-teams/badges/gpa.svg)](https://codeclimate.com/github/bisscomm/refinerycms-teams) [![Test Coverage](https://codeclimate.com/github/bisscomm/refinerycms-teams/badges/coverage.svg)](https://codeclimate.com/github/bisscomm/refinerycms-teams/coverage)
+
 Teams engine for [Refinery CMS](http://refinerycms.com) allows you to add teams on your website
 
 ### In summary you can:
