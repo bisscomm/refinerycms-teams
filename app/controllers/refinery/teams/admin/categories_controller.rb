@@ -13,7 +13,8 @@ module Refinery
         private
           def category_params
             params.require(:category).permit(
-              :title
+              :title,
+              :parent_id
             )
           end
 

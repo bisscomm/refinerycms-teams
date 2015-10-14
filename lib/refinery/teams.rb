@@ -1,4 +1,6 @@
+require 'acts_as_indexed'
 require 'refinerycms-core'
+require 'friendly_id/globalize'
 
 module Refinery
   autoload :TeamsGenerator, 'generators/refinery/teams/teams_generator'

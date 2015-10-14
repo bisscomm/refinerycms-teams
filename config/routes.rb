@@ -20,6 +20,7 @@ Refinery::Core::Engine.routes.draw do
         end
 
         resources :categories, except: :show do
+          get :children, :on => :member
           post :update_positions, on: :collection
         end
       end
