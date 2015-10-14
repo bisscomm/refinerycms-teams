@@ -8,12 +8,12 @@ module Refinery
       validates :fullname, :presence => true, :uniqueness => true
       alias_attribute :title, :fullname
 
+      acts_as_indexed :fields => [:fullname]
+
       belongs_to :photo, :class_name => '::Refinery::Image'
 
       has_many :categorizations, :dependent => :destroy, :foreign_key => :team_id
       has_many :categories, :through => :categorizations, :source => :teams_category
-
-      acts_as_indexed :fields => [:fullname]
 
       scope :published, -> { where :draft => false }
 
