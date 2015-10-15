@@ -22,10 +22,14 @@ fr:
           category:
             edit: Modifier cette catégorie
             delete: Supprimer définitivement cette catégorie
+            new_child: Ajouter une nouvelle sous-catégorie
           index:
             title: Catégories
             no_results: Désolé ! Aucun résultat.
             no_items_yet: 'Il n''y a actuellement aucun(e) categorie. Cliquer sur "Créer une nouvelle catégorie" pour créer votre première catégorie.'
+          form:
+            parent_category: Catégorie principale
+            parent_category_help: Vous pouvez imbriquer une catégorie dans une autre catégorie, en créant une catégorie multi-niveau. Choisissez une catégorie pour faire de cette catégorie l'enfant de celle que vous avez sélectionnez, ou laisser le champ vide pour la garder comme catégorie principale (parente)
         teams:
           actions:
             reorder: Réordonner les équipier(ère)s

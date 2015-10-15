@@ -22,10 +22,14 @@ en:
           category:
             edit: Edit this category
             delete: Delete this category
+            new_child: Add a new child
           index:
             title: Categories
             no_results: Sorry! There are no results found.
             no_items_yet: There are no categories yet. Click "Add new category" to add your first category.
+          form:
+            parent_category: Parent Category
+            parent_category_help: You can nest a category inside another category, creating a multiple-level category. Choose a category to make this category the child of the one you select, or leave it blank to keep it as a top-level category.
         teams:
           actions:
             reorder: Reorder teams

@@ -24,7 +24,7 @@
           <%= check_box_tag 'team[category_ids][]', category.id,
                              @team.categories.include?(category),
                              :id => (id="team_category_ids_#{category.id}") %>
-          <%= label_tag 'team[category_ids][]', category.title,
+          <%= label_tag 'team[category_ids][]', "#{'-' * category.level} #{category.title}",
                          :class => 'stripped',
                          :for => id %>
         </li>
