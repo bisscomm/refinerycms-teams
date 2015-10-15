@@ -1,8 +1,13 @@
-<ul class='search_list'>
-  <li class='not_a_link'>
-    <%= render "/refinery/admin/search", :url => request.path %>
-  </li>
-</ul>
+<% if ::Refinery::Teams::Admin::CategoriesController.searchable? %>
+  <ul class='search_list'>
+    <li>
+      <%= render :partial => "/refinery/admin/search",
+                  :locals => {
+                    :url => refinery.teams_admin_categories_path
+                  } %>
+    </li>
+  </ul>
+<% end %>
 
 <ul class='collapsible_menu'>
   <li class='not_a_link'>

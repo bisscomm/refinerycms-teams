@@ -1,3 +1,5 @@
+require 'acts_as_indexed'
+
 module Refinery
   module Teams
     class Team < Refinery::Core::BaseModel
