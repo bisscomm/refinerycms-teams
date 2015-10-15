@@ -5,7 +5,8 @@ module Refinery
 
         crudify :'refinery/teams/team',
                 :order => 'position ASC',
-                :include => [:translations]
+                :include => [:translations],
+                :paging => false
 
         helper :'refinery/teams/admin'
 
