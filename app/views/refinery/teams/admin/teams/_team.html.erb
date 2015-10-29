@@ -20,7 +20,7 @@
         <% if Refinery::I18n.frontend_locales.many? %>
           <span class='locales'>
             <% team.translations.sort_by{ |t| Refinery::I18n.frontend_locales.index(t.locale)}.each do |translation| %>
-              <% if translation.job_title.present? %>
+              <% if translation.job_title.present? || translation.body.present? %>
                 <%= link_to refinery.edit_teams_admin_team_path(team, :switch_locale => translation.locale), :class => 'locale', title: translation.locale.upcase do %>
 
                   <div class="<%=translation.locale %> locale_marker">
