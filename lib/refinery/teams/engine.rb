@@ -10,8 +10,8 @@ module Refinery
         Refinery::Plugin.register do |plugin|
           plugin.name = "refinery_teams"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.teams_admin_teams_path }
+          plugin.menu_match = %r{refinery/(teams)(/.+?)?$}
           plugin.pathname = root
-          
         end
       end
 
