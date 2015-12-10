@@ -1,7 +1,7 @@
 nb:
   refinery:
     plugins:
-      teams:
+      refinery_teams:
         title: Teams
     teams:
       admin:
