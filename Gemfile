@@ -42,6 +42,7 @@ end
 
 group :test do
   gem "launchy"
+  gem 'rspec-its' # for the model's validation tests.
 end
 
 # Load local gems according to Refinery developer preference.
