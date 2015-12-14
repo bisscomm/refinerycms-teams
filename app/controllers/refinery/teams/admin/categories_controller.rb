@@ -4,31 +4,26 @@ module Refinery
       class CategoriesController < ::Refinery::AdminController
 
         crudify :'refinery/teams/category',
-                :order => "lft ASC",
-                :include => [:children, :translations]
+                order: "lft ASC",
+                include: [:children, :translations]
 
         helper :'refinery/teams/admin'
 
         def new
-          @category = ::Refinery::Teams::Category.new(:parent_id => find_parent_category)
+          @category = ::Refinery::Teams::Category.new(parent_id: find_parent_category)
         end
 
         def children
           @category = find_category
-          render :layout => false
-        end
-
-        private
-        
-        def category_params
-          params.require(:category).permit(
-            :title,
-            :parent_id
-          )
+          render layout: false
         end
 
         protected
-        
+
+        def category_params
+          params.require(:category).permit(permitted_category_params)
+        end
+
         def find_parent_category
           if params[:parent_id].present?
             ::Refinery::Teams::Category.find(params[:parent_id])
@@ -43,8 +38,18 @@ module Refinery
 
         def after_update_positions
           find_all_categories
-          render :partial => '/refinery/teams/admin/categories/sortable_list' and return
+          render partial: '/refinery/teams/admin/categories/sortable_list' and return
         end
+
+        private
+
+        def permitted_category_params
+          [
+            :title,
+            :parent_id
+          ]
+        end
+
       end
     end
   end

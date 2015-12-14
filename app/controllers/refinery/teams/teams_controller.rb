@@ -2,8 +2,8 @@ module Refinery
   module Teams
     class TeamsController < ::ApplicationController
 
-      before_filter :find_all_teams
-      before_filter :find_page
+      before_action :find_all_teams
+      before_action :find_page
 
       def index
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -19,7 +19,7 @@ module Refinery
         present(@page)
       end
 
-    protected
+      protected
 
       def find_all_teams
         @teams = Team.published

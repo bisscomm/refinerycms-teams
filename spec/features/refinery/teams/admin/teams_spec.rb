@@ -1,11 +1,11 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe Refinery do
-  describe "Teams" do
-    describe "Admin" do
-      describe "teams" do
-        refinery_login_with :refinery_user
+module Refinery
+  module Teams
+    module Admin
+      describe "teams", type: :feature do
+        refinery_login
 
         describe "teams list" do
           before do
@@ -15,8 +15,8 @@ describe Refinery do
 
           it "shows two items" do
             visit refinery.teams_admin_teams_path
-            page.should have_content("UniqueTitleOne")
-            page.should have_content("UniqueTitleTwo")
+            expect(page).to have_content("UniqueTitleOne")
+            expect(page).to have_content("UniqueTitleTwo")
           end
         end
 
@@ -24,7 +24,7 @@ describe Refinery do
           before do
             visit refinery.teams_admin_teams_path
 
-            click_link "Add New Team"
+            click_link "Add new team member"
           end
 
           context "valid data" do
@@ -32,8 +32,8 @@ describe Refinery do
               fill_in "Fullname", :with => "This is a test of the first string field"
               click_button "Save"
 
-              page.should have_content("'This is a test of the first string field' was successfully added.")
-              Refinery::Teams::Team.count.should == 1
+              expect(page).to have_content("'This is a test of the first string field' was successfully added.")
+              expect(Refinery::Teams::Team.count).to eq 1
             end
           end
 
@@ -41,8 +41,8 @@ describe Refinery do
             it "should fail" do
               click_button "Save"
 
-              page.should have_content("Fullname can't be blank")
-              Refinery::Teams::Team.count.should == 0
+              expect(page).to have_content("Fullname can't be blank")
+              expect(Refinery::Teams::Team.count).to eq 0
             end
           end
 
@@ -52,13 +52,13 @@ describe Refinery do
             it "should fail" do
               visit refinery.teams_admin_teams_path
 
-              click_link "Add New Team"
+              click_link "Add new team member"
 
               fill_in "Fullname", :with => "UniqueTitle"
               click_button "Save"
 
-              page.should have_content("There were problems")
-              Refinery::Teams::Team.count.should == 1
+              expect(page).to have_content("There were problems")
+              expect(Refinery::Teams::Team.count).to eq 1
             end
           end
 
@@ -77,8 +77,8 @@ describe Refinery do
             fill_in "Fullname", :with => "A different fullname"
             click_button "Save"
 
-            page.should have_content("'A different fullname' was successfully updated.")
-            page.should have_no_content("A fullname")
+            expect(page).to have_content("'A different fullname' was successfully updated.")
+            expect(page).to have_no_content("A fullname")
           end
         end
 
@@ -88,10 +88,10 @@ describe Refinery do
           it "should succeed" do
             visit refinery.teams_admin_teams_path
 
-            click_link "Remove this team forever"
+            click_link "Delete this team member"
 
-            page.should have_content("'UniqueTitleOne' was successfully removed.")
-            Refinery::Teams::Team.count.should == 0
+            expect(page).to have_content("'UniqueTitleOne' was successfully removed.")
+            expect(Refinery::Teams::Team.count).to eq 0
           end
         end
 
