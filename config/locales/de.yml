@@ -1,0 +1,64 @@
+de:
+  refinery:
+    plugins:
+      refinery_teams:
+        title: Teams
+    teams:
+      admin:
+        submenu:
+          categories:
+            title: Kategorien
+            manage: Kategorien verwalten
+            new: Neue Kategorie hinzufügen
+          teams:
+            title: Teams
+            manage: Teams verwalten
+            new: Neues Teammitglied hinzufügen
+            uncategorized: Unkategorisiertes Teammitglied
+        categories:
+          actions:
+            reorder_categories: Kategorien anordnen
+            reorder_categories_done: Anordnen der Kategorien erledigt
+          category:
+            edit: Bearbeite diese Kategorie
+            delete: Lösche diese Kategorie
+            new_child: Unterkategorie hinzufügen
+          index:
+            title: Kategorien
+            no_results: Entschuldigung! Es wurden keine Ergebnisse gefunden
+            no_items_yet: Es gibt bisher keine Kategorien. Klick auf "Neue Kategorie hinzufügen", um die erste Kategorie zu erstellen.
+          form:
+            parent_category: Übergeordnete Kategorie
+            parent_category_help: You can nest a category inside another category, creating a multiple-level category. Choose a category to make this category the child of the one you select, or leave it blank to keep it as a top-level category.
+        teams:
+          actions:
+            reorder: Teams anordnen
+            reorder_done: Anordnen der Teams erledigt
+          records:
+            title: Teams
+            no_results: Entschuldigung! Es wurden keine Ergebnisse gefunden.
+            no_items_yet: Es gibt bisher noch keine Teams. Klick auf "Neues Team hinzufügen", um das erste Team zu erstellen.
+          team:
+            view_live_html: Zeige dieses Team member live an<br/><em>(öffnet sich in einem neuen Fenster)</em>
+            edit: Bearbeite dieses Teammitglied
+            delete: Lösche dieses Teammitglied
+            draft: Entwurf
+      teams:
+        index:
+          no_items_yet: Es gibt bisher keine Teammitglieder.
+        show:
+          other: Andere Teams
+  activerecord:
+    models:
+      refinery/teams/category: Kategorie
+      refinery/teams/team: Team
+    attributes:
+      refinery/teams/category:
+        title: Title
+      refinery/teams/team:
+        fullname: Name
+        job_title: Jobtitel
+        body: Body
+        photo: Foto
+        email: E-Mail
+        draft: Als Entwurf speichern
