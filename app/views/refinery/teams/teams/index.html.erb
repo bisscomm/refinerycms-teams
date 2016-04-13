@@ -2,11 +2,7 @@
   <% if @teams.any? %>
     <section>
       <ul id="teams">
-        <% @teams.each do |team| %>
-          <li>
-            <%= link_to team.fullname, refinery.teams_team_path(team) %>
-          </li>
-        <% end %>
+        <%= render partial: "team", collection: @teams %>
       </ul>
     </section>
   <% else %>
