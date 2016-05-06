@@ -1,3 +1,6 @@
-<li>
-  <%= link_to team.fullname, refinery.teams_team_path(team) %>
+<li class="vcard">
+  <h4 class"fn">
+    <%= link_to team.fullname, refinery.teams_team_path(team) %>
+  </h4>
+  <%= image_tag team.photo.url, alt: team.title, class: 'photo' if team.photo %>
 </li>

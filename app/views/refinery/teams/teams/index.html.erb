@@ -1,8 +1,11 @@
 <% content_for :body do %>
-  <% if @teams.any? %>
+  <%=raw @page.content_for(Refinery::Pages.default_parts.first[:slug].to_sym) %>
+
+  <h2><%= t('.team') %></h2>
+  <% if @team_categories.any? %>
     <section>
-      <ul id="teams">
-        <%= render partial: "team", collection: @teams %>
+      <ul id="team-categories">
+        <%= render partial: "category", collection: @team_categories %>
       </ul>
     </section>
   <% else %>

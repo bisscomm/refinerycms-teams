@@ -2,7 +2,8 @@ module Refinery
   module Teams
     class TeamsController < ::ApplicationController
 
-      before_action :find_all_teams
+      before_action :find_all_teams, only: [ :index, :show ]
+      before_action :find_all_team_categories, only: [ :index ]
       before_action :find_page
 
       def index
@@ -23,6 +24,10 @@ module Refinery
 
       def find_all_teams
         @teams = Team.published
+      end
+
+      def find_all_team_categories
+        @team_categories = Refinery::Teams::Category.all
       end
 
       def find_page
