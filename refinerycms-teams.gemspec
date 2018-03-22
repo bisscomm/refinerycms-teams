@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'actionview-encoded_mail_to', '~> 1.0.5'
   s.add_dependency 'acts_as_indexed', '~> 0.8.0'
   s.add_dependency 'globalize', ['>= 4.0.0', '< 5.2']
-  s.add_dependency 'friendly_id', '~> 5.1.0'
+  s.add_dependency 'friendly_id', ['>= 5.1.0', '< 6.0']
   s.add_dependency 'friendly_id-globalize', '>= 1.0.0.alpha2'
 
   # Development dependencies (usually used for testing)
